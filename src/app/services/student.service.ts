@@ -34,7 +34,7 @@ export class StudentService {
      this.students[position].active = !this.students[position].active;
    }
 
-   deleteStudent(position: number){
-
+   deleteStudent(position: number): void{
+     this.students.splice(position, 1);
    }
 } 
