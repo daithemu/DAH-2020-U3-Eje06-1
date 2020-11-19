@@ -15,4 +15,8 @@ export class Tab1Page {
     this.students = this.studentService.getStudents();
   }
 
+  changedStatus(pos: number): viod{
+    this.studentService.changeStatus(pos);
+  }
+
 }
