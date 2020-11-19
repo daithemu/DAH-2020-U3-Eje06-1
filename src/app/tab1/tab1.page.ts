@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Student} from '../models/student';
 import {StudentService} from '../services/student.service';
 import {AlertController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,8 @@ export class Tab1Page {
   students: Student[] = new Array();
   search: string;
 
-  constructor(private studentService: StudentService, private alert: AlertController) {
+  constructor(private studentService: StudentService, private alert: AlertController,
+    private router: Router) {
     this.getAll();
   }
 
@@ -54,6 +56,10 @@ export class Tab1Page {
         return(student.name.toLocaleLowerCase().indexOf(this.search.toLocaleLowerCase()) > -1);
       });
     }
+  }
+
+  newStudent(){
+    this.router.navigate(['new-student']);
   }
 
 }

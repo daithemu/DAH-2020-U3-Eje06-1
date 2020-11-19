@@ -37,4 +37,8 @@ export class StudentService {
    deleteStudent(position: number): void{
      this.students.splice(position, 1);
    }
+   
+   newStudent(student: Student): void{
+     this.students.push(student);
+   }
 } 
